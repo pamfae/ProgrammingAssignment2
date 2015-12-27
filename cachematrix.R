@@ -36,8 +36,11 @@ cacheSolve <- function(x, ...) {
     return(m_inverse)
   }
   
+  #retrieve the matrix so that...
   m_data <- x$get()
-  inverse <- solve(m_data, ...)
+  #we can get its inverse
+  m_inverse <- solve(m_data, ...)
+  #set the inverse so it can be retrieved
   x$setInverse(m_inverse)
   m_inverse
 }
